@@ -119,9 +119,14 @@ async function check() {
             
         if (values.filter(value => value == "x").length == 3 || values.filter(value => value == "o").length == 3) {        
             if (values[0] == signs.one) scores.one += 1; else scores.two += 1;
-                
-            scoreOne.innerHTML = scores.one;
-            scoreTwo.innerHTML = scores.two;
+            
+            if (signs.one == "x") {
+                scoreOne.innerHTML = scores.one;
+                scoreTwo.innerHTML = scores.two;
+            } else {
+                scoreOne.innerHTML = scores.two;
+                scoreTwo.innerHTML = scores.one;
+            }
 
             await sleep(0.6);
 
