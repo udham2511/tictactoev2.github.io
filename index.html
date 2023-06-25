@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="fullScreen flexBox" style="position: relative;">
+        <section id="welcomeSection" class="flexBox fullScreen pageTransition flexColumn">
+            <i>Tic Tac</i>
+            <div id="symbolBox" class="flexBox">
+                <div class="flexBox x-common"></div>
+                <div class="o-common"></div>
+            </div>
+            <div class="flexBox flexColumn" id="welcomeBtnBox">
+                <button onclick="handleSubmit(1)">SINGLE PLAYER</button>
+                <button onclick="handleSubmit(2)">WITH A FRIEND</button>
+            </div>
+        </section>
+
+        <section id="signSection" class="flexBox fullScreen pageTransition flexColumn">
+            <p>Pick Your Side</p>
+
+            <form id="signForm" class="flexBox flexColumn">
+                <div class="flexBox">
+                    <div class="flexBox flexColumn">
+                        <label for="x-symbol" class="x-common"></label>
+                        <input type="checkbox" name="x-symbol" checked onclick="onlyOne(this)">
+                    </div>
+                    <div class="flexBox flexColumn">
+                        <label for="o-symbol" class="o-common"></label>
+                        <input type="checkbox" name="o-symbol" onclick="onlyOne(this)">
+                    </div>
+                </div>
+
+                <button type="submit">CONTINUE</button>
+            </form>
+        </section>
+
+        <section id="gameSection" class="flexBox flexColumn">
+            <div class="flexBox scoreBox">
+                <div class="scores" id="scoreOne">0</div>
+                <div class="flexBox">
+                    <div class="x-common"></div>
+                    <p>Player</p>
+                </div>
+            </div>
+
+            <div id="gameGrid">
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+                <div class="boxes flexBox"></div>
+            </div>
+
+            <div class="flexBox scoreBox">
+                <div class="flexBox">
+                    <div class="o-common"></div>
+                    <p>Player</p>
+                </div>
+                <div class="scores" id="scoreTwo">0</div>
+            </div>
+
+            <img src="images/home.svg" alt="HOME" id="homeBtn" onclick="toHome()">
+        </section>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
